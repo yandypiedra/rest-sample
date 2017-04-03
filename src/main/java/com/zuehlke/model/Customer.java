@@ -1,9 +1,6 @@
 package com.zuehlke.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by yapi on 17.03.17. updated
@@ -16,12 +13,15 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
+    @Embedded
+    private Address address;
 
     public Customer() {}
 
-    public Customer(String firstName, String lastName) {
+    public Customer(String firstName, String lastName, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.address = address;
     }
 
     public Long getId() {
@@ -42,5 +42,13 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
