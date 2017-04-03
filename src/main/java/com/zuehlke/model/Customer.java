@@ -13,15 +13,15 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
-//    @Embedded
-//    private Address address;
+    @Embedded
+    private Address address;
 
     public Customer() {}
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-//        this.address = address;
+        this.address = address;
     }
 
     public Long getId() {
@@ -44,11 +44,11 @@ public class Customer {
         this.lastName = lastName;
     }
 
-//    public Address getAddress() {
-//        return address;
-//    }
+    public Address getAddress() {
+        return address;
+    }
 
-//    public void setAddress(Address address) {
-//        this.address = address;
-//    }
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }
